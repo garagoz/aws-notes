@@ -1,0 +1,30 @@
+# How to add and mount EBS Volume on Ubuntu EC2 Linux Instance
+
+## EBS Availability Zone: Choose the same availability zone as your EC2 instance
+
+1. lsblk (list the available block devices)
+
+2. Identify your attached volume (e.g., /dev/xvdf)
+
+3. Create a directory to new volume and Create a Filesystem on the EBS Volume
+    mkdir -p /mnt/ebs_volum
+
+4. Now use the below command to create a filesystem on the attached volume
+    mkfs -t ext4 /dev/xvdf
+
+5. Verify if the new file system exists, use the below command
+    file -s /dev/xvdf
+
+6. Mount the EBS Volume
+    mount /dev/xvdf /mnt/ebs_volume
+
+7. Configure Automatic Mount on Boot, find UUID of disk
+   lsblk -f
+
+8. open this file /etc/fstab
+
+9. add below line 
+   UUID=<<UUID-OF-DISK>>  /mnt/ebs_volume  ext4  defaults,nofail  0  2
+
+10. Save and exit
+    
