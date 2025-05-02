@@ -1,3 +1,5 @@
-1. You can create maximum 5 vpc on each region (Submit a ticker for more than 5 vpc)
+1. You can create maximum 5 custom vpc on each REGION (Submit a ticker for more than 5 vpc)
+2. On account creation, created default VPC on each REGION (for best practice dont delete default VPC)
+3 VPC is free, but NAT and Elastic IP affects cost
 2. Largest CIDR for subnet is /16 (65536)
 3. Smallest CIDR for subnet is /28 (IP address)
